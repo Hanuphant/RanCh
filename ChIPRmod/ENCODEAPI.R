@@ -5,6 +5,8 @@ library(dplyr)
 library(stringr)
 library(tidyr)
 
+export('initial_search', 'search_based_biosample_classifications', 'search_based_biosample')
+
 # Get intial search results for the transcription factor
 initial_search <- function(tcp_name){
 
