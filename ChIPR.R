@@ -1,7 +1,0 @@
-library(httr)
-library(jsonlite)
-library(dplyr)
-library(stringr)
-library(tidyr)
-library(modules)
-api <- use("ChIPRmod/ENCODEAPI.R")
