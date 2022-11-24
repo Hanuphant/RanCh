@@ -5,3 +5,6 @@ library(stringr)
 library(tidyr)
 library(modules)
 api <- use("ChIPRmod/ENCODEAPI.R")
+
+library(shiny)
+library(shinythemes)
