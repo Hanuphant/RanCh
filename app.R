@@ -127,9 +127,9 @@ download_narrowpeak_files <- function (accession, jobid){
     response <- fromJSON(content(response, "text", encoding = "UTF-8"))
 
     # Get mask for the narrowpeak file format type
-    mask <- response$files$file_format_type == 'narrowPeak'
-    mask <- response$files$preferred_default[mask]
-    hrefs <- na.omit(response$files$href[mask])
+    narrowPeakmask <- response$files$file_format_type == 'narrowPeak'
+    defaultmask <- response$files$preferred_default
+    hrefs <- na.omit(response$files$href[narrowPeakmask & defaultmask])
 
     # Create directory for the narrowpeak files based on the jobid
     dir.create(paste0('jobs/',jobid), recursive = TRUE)
@@ -203,6 +203,8 @@ server <- function(input, output, session) {
         jobid <- 'sampleid'
         search_based_biosample(input$biosample_classification, input$tcp_name, input$biosample, jobid = jobid)
     })
+
+    
 
 
 
