@@ -1,0 +1,12 @@
+<h1 id="ranch">RanCh</h1>
+<h2 id="integrating-rna-seq-and-chip-seq-to-identify-direct-targets">Integrating RNA-Seq and ChIP-Seq to identify direct targets</h2>
+<p>RanCh allows the user to derive direct downstream targets for the desired transcription factor in the list of differentially expressed genes. </p>
+<ul>
+<li>Input - 
+    1.    Read counts matrix (.txt, .tsv or .csv)
+    2.    Metadata file (.tsv)
+    3.    Choosing the TF factor and cell line from the dropdown menu</li>
+<li>Output - a .txt file with the output from BETA.</li>
+</ul>
+<h2 id="about">About</h2>
+<p>RanCh is a novel, easy to use application to identify direct downstream &gt; targets of differentially expressed genes. RanCh takes the counts matrix and metadata files (RNA-Seq) of an experiment as an input. The application allows the user to enter the transcription factor and cell line desired for integrative analysis. In the backend, the application uses the read counts to generate a list differentially expressed genes using DeSeq2. The app extracts the peak file of the desired TF and cell line from the ENCODE repository. As a final step, the list of DEGs and the peak file information is used by a tool named BETA. BETA finally gives a text output file (with a graphical output) which has the list of upregulated and downregulated target genes for the desired transcription factor. </p>
